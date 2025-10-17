@@ -10,12 +10,12 @@ const About = () => {
       focus: "Specialization in Artificial Intelligence and Machine Learning",
     },
     {
-      degree: "Class 12",
+      degree: "Class XII",
       institution: "K.D. Jain Sr. Sec. School, Beawar, Rajasthan",
       period: "2022 – 2023",
     },
     {
-      degree: "Class 10",
+      degree: "Class X",
       institution: "Sanskriti The School, Ajmer, Rajasthan",
       period: "2020 – 2021",
     },
