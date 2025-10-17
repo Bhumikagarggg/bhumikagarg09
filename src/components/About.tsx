@@ -5,7 +5,7 @@ const About = () => {
   const education = [
     {
       degree: "B.Tech in Computer Science Engineering (AI/ML)",
-      institution: "D.Y. Patil International University",
+      institution: "D.Y. Patil International University, Pune",
       period: "2023 – Present",
       focus: "Specialization in Artificial Intelligence and Machine Learning",
     },
