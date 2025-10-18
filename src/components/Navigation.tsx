@@ -71,13 +71,13 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-border pt-4 animate-fade-in">
-            <div className="flex flex-col gap-4">
+          <div className="md:hidden mt-4 pb-4 border-t border-border pt-4 animate-fade-in bg-background/95 backdrop-blur-md rounded-lg">
+            <div className="flex flex-col gap-4 p-2">
               {["home", "about", "skills", "experience", "projects", "contact"].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}
-                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors capitalize text-left"
+                  className="text-base font-medium text-muted-foreground hover:text-primary transition-colors capitalize text-left py-2 px-3 rounded hover:bg-muted"
                 >
                   {item}
                 </button>
@@ -85,7 +85,7 @@ const Navigation = () => {
               <Button
                 variant="outline"
                 onClick={() => scrollToSection("contact")}
-                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground w-full"
+                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground w-full mt-2"
               >
                 Get in Touch
               </Button>
