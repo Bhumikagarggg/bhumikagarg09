@@ -1,14 +1,10 @@
-import { Github, Linkedin, Mail, Phone, ArrowDown } from "lucide-react";
+import { Github, Linkedin, Mail, Phone } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const navigate = useNavigate();
 
   return (
     <section 
@@ -64,7 +60,7 @@ const Hero = () => {
             <div className="flex items-center justify-center lg:justify-start gap-3 lg:gap-4 flex-wrap">
               <Button 
                 size="lg" 
-                onClick={() => scrollToSection("projects")}
+                onClick={() => navigate("/projects")}
                 className="bg-primary text-primary-foreground hover:bg-primary/90 glow text-base px-8 py-6"
               >
                 View Projects
@@ -72,7 +68,7 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                onClick={() => scrollToSection("contact")}
+                onClick={() => navigate("/contact")}
                 className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-base px-8 py-6"
               >
                 Contact Me
@@ -136,13 +132,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-
-      <button 
-        onClick={() => scrollToSection("about")}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-primary animate-bounce"
-      >
-        <ArrowDown className="w-8 h-8" />
-      </button>
     </section>
   );
 };

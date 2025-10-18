@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,13 +17,19 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
-    }
+  const handleNavigation = (path: string) => {
+    navigate(path);
+    setIsMobileMenuOpen(false);
   };
+
+  const navItems = [
+    { name: "home", path: "/" },
+    { name: "about", path: "/about" },
+    { name: "skills", path: "/skills" },
+    { name: "experience", path: "/experience" },
+    { name: "projects", path: "/projects" },
+    { name: "contact", path: "/contact" },
+  ];
 
   return (
     <nav
@@ -30,30 +39,34 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
-          <button 
-            onClick={() => scrollToSection("home")}
+          <Link 
+            to="/"
             className="text-xl font-bold text-gradient"
           >
             BG
-          </button>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {["home", "about", "skills", "experience", "projects", "contact"].map((item) => (
-              <button
-                key={item}
-                onClick={() => scrollToSection(item)}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors capitalize"
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                to={item.path}
+                className={`text-sm font-medium transition-colors capitalize ${
+                  location.pathname === item.path
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-primary"
+                }`}
               >
-                {item}
-              </button>
+                {item.name}
+              </Link>
             ))}
           </div>
 
           <div className="flex items-center gap-4">
             <Button
               variant="outline"
-              onClick={() => scrollToSection("contact")}
+              onClick={() => handleNavigation("/contact")}
               className="hidden md:flex border-primary text-primary hover:bg-primary hover:text-primary-foreground"
             >
               Get in Touch
@@ -73,18 +86,23 @@ const Navigation = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4 border-t border-border pt-4 animate-fade-in bg-background/95 backdrop-blur-md rounded-lg">
             <div className="flex flex-col gap-4 p-2">
-              {["home", "about", "skills", "experience", "projects", "contact"].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item)}
-                  className="text-base font-medium text-muted-foreground hover:text-primary transition-colors capitalize text-left py-2 px-3 rounded hover:bg-muted"
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`text-base font-medium transition-colors capitalize text-left py-2 px-3 rounded hover:bg-muted ${
+                    location.pathname === item.path
+                      ? "text-primary"
+                      : "text-muted-foreground hover:text-primary"
+                  }`}
                 >
-                  {item}
-                </button>
+                  {item.name}
+                </Link>
               ))}
               <Button
                 variant="outline"
-                onClick={() => scrollToSection("contact")}
+                onClick={() => handleNavigation("/contact")}
                 className="border-primary text-primary hover:bg-primary hover:text-primary-foreground w-full mt-2"
               >
                 Get in Touch
