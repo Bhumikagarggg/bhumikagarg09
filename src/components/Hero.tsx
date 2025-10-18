@@ -42,6 +42,20 @@ const Hero = () => {
               </p>
             </div>
 
+            {/* Photo - visible only on mobile between subtitle and description */}
+            <div className="lg:hidden relative flex justify-center items-center py-4">
+              <div className="relative z-10 w-[280px] h-[280px]">
+                <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-secondary/30 rounded-full blur-2xl" />
+                <div className="relative overflow-hidden rounded-full w-full h-full border-4 border-primary/20">
+                  <img 
+                    src="https://i.postimg.cc/ZYLbCh3P/temp-Image-G2v-Lv-D.avif"
+                    alt="Bhumika Garg - Full-Stack Developer"
+                    className="w-full h-full object-cover shadow-2xl"
+                  />
+                </div>
+              </div>
+            </div>
+
             <p className="text-lg text-muted-foreground max-w-2xl lg:mx-0 mx-auto leading-relaxed">
               I'm a tech-savvy engineering student passionate about full-stack development and artificial intelligence. 
               I love building impactful digital solutions and exploring intelligent systems.
@@ -97,15 +111,15 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right side - Photo */}
-          <div className="relative animate-fade-in flex justify-center items-center">
+          {/* Right side - Photo - visible only on desktop */}
+          <div className="relative animate-fade-in hidden lg:flex justify-center items-center">
             {/* Decorative elements */}
-            <div className="absolute -top-5 -right-5 w-16 h-16 lg:w-24 lg:h-24 border-4 border-primary/30 rounded-full" />
-            <div className="absolute -bottom-5 -left-5 w-16 h-16 lg:w-20 lg:h-20 bg-secondary/20 rounded-full blur-xl" />
-            <div className="absolute top-1/2 -right-10 w-12 h-12 lg:w-16 lg:h-16 bg-primary/20 rounded-full" />
+            <div className="absolute -top-5 -right-5 w-24 h-24 border-4 border-primary/30 rounded-full" />
+            <div className="absolute -bottom-5 -left-5 w-20 h-20 bg-secondary/20 rounded-full blur-xl" />
+            <div className="absolute top-1/2 -right-10 w-16 h-16 bg-primary/20 rounded-full" />
             
             {/* Photo container */}
-            <div className="relative z-10 w-[300px] h-[300px] lg:w-[500px] lg:h-[500px]">
+            <div className="relative z-10 w-[500px] h-[500px]">
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-secondary/30 rounded-full blur-2xl" />
               <div className="relative overflow-hidden rounded-full w-full h-full border-4 border-primary/20">
                 <img 
