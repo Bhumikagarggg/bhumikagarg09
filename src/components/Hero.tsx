@@ -25,22 +25,22 @@ const Hero = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center max-w-7xl mx-auto">
           {/* Left side - Text content */}
-          <div className="space-y-5 lg:space-y-8 animate-fade-in text-center lg:text-left">
+          <div className="space-y-4 lg:space-y-8 animate-fade-in text-center lg:text-left px-2">
             <div className="space-y-2 lg:space-y-4">
-              <p className="text-sm lg:text-sm uppercase tracking-wider text-primary font-medium">
+              <p className="text-xs lg:text-sm uppercase tracking-wider text-primary font-medium">
                 Engineering Student
               </p>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
                 Bhumika <span className="text-gradient">Garg</span>
               </h1>
-              <p className="text-xl md:text-2xl lg:text-2xl text-muted-foreground font-light">
+              <p className="text-lg md:text-2xl lg:text-2xl text-muted-foreground font-light">
                 Full-Stack Developer | AI/ML Enthusiast
               </p>
             </div>
 
             {/* Photo - visible only on mobile between subtitle and description */}
-            <div className="lg:hidden relative flex justify-center items-center">
-              <div className="relative z-10 w-[360px] h-[360px]">
+            <div className="lg:hidden relative flex justify-center items-center py-2">
+              <div className="relative z-10 w-[280px] h-[280px]">
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-secondary/30 rounded-full blur-2xl" />
                 <div className="relative overflow-hidden rounded-full w-full h-full border-4 border-primary/20">
                   <img 
@@ -52,16 +52,16 @@ const Hero = () => {
               </div>
             </div>
 
-            <p className="text-lg lg:text-lg text-muted-foreground max-w-2xl lg:mx-0 mx-auto leading-relaxed">
+            <p className="text-base lg:text-lg text-muted-foreground max-w-2xl lg:mx-0 mx-auto leading-relaxed px-2">
               I'm a tech-savvy engineering student passionate about full-stack development and artificial intelligence. 
               I love building impactful digital solutions and exploring intelligent systems.
             </p>
 
-            <div className="flex items-center justify-center lg:justify-start gap-3 lg:gap-4 flex-wrap">
+            <div className="flex items-center justify-center lg:justify-start gap-3 lg:gap-4 flex-wrap px-2">
               <Button 
                 size="lg" 
                 onClick={() => navigate("/projects")}
-                className="bg-primary text-primary-foreground hover:bg-primary/90 glow text-base px-8 py-6"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 glow text-sm md:text-base px-6 py-5 md:px-8 md:py-6"
               >
                 View Projects
               </Button>
@@ -69,20 +69,20 @@ const Hero = () => {
                 size="lg" 
                 variant="outline"
                 onClick={() => navigate("/contact")}
-                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-base px-8 py-6"
+                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-sm md:text-base px-6 py-5 md:px-8 md:py-6"
               >
                 Contact Me
               </Button>
             </div>
 
-            <div className="flex items-center justify-center lg:justify-start gap-6 lg:gap-6 pt-2">
+            <div className="flex items-center justify-center lg:justify-start gap-5 lg:gap-6 pt-2 px-2">
               <a 
                 href="https://github.com/Bhumikagarggg" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
-                <Github className="w-7 h-7 lg:w-6 lg:h-6" />
+                <Github className="w-6 h-6" />
               </a>
               <a 
                 href="https://linkedin.com/in/bhumikagarg09" 
@@ -90,19 +90,19 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
-                <Linkedin className="w-7 h-7 lg:w-6 lg:h-6" />
+                <Linkedin className="w-6 h-6" />
               </a>
               <a 
                 href="mailto:bhumikatech2024@gmail.com"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
-                <Mail className="w-7 h-7 lg:w-6 lg:h-6" />
+                <Mail className="w-6 h-6" />
               </a>
               <a 
                 href="tel:7742469911"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
-                <Phone className="w-7 h-7 lg:w-6 lg:h-6" />
+                <Phone className="w-6 h-6" />
               </a>
             </div>
           </div>
