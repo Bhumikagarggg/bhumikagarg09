@@ -55,7 +55,7 @@ const Contact = () => {
           from_email: formData.email,
           message: formData.message,
         },
-        "9KfC4tffGKmp2BD8W"
+        "6gFjCdsHqRmSeP7gn"
       );
 
       toast.success("Message sent! I'll get back to you soon.");
